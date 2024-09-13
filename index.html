@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="From Glance to Inspect: Frontier Maps from Adaptive Weighting of Multi-Dimensional Cues for Zero-Shot Object Navigation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Glance to Inspect | Frontier Maps from Adaptive Weighting of Multi-Dimensional Cues for Zero-Shot Object Navigation</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  </script>
+
+  <script>
+    function updateSim() {
+      var task = document.getElementById("sim-video-menu").value;
+
+      console.log("updateSim", task)
+
+      var video = document.getElementById("sim-video");
+      video.src = "media/videos/" + 
+                  task + 
+                  ".mp4"
+      video.play();
+    }
+
+    function updateCompare() {
+      var task = document.getElementById("compare-video-menu").value;
+
+      console.log("updatecimpare", task)
+
+      var video1 = document.getElementById("compare-video1");
+      video1.src = "media/videos/vlfm-" + 
+                  task + 
+                  ".mp4"
+      video1.play();
+
+      var video2 = document.getElementById("compare-video2");
+      video2.src = "media/videos/mdwfm-" + 
+                  task + 
+                  ".mp4"
+      video2.play();
+    }
+    
+  </script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <link rel="stylesheet" href="./static/source_serif_4.css">
+  <link rel="stylesheet" href="./static/source_sans_3.css">  
+  <link rel="stylesheet" href="./static/academicons.min.css">
+  <link rel="stylesheet" href="./static/fontawesome/css/fontawesome.css">
+  <link rel="stylesheet" href="./static/fontawesome/css/brands.css">
+  <link rel="stylesheet" href="./static/fontawesome/css/light.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body onload="updateCompare();updateSim();">
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">From Glance to Inspect: Frontier Maps from Adaptive Weighting of Multi-Dimensional Cues for Zero-Shot Object Navigation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a target="_blank" href="">Qingfeng Li</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="">Xiaoze Wu</a><sup>1*</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="">Ningbo Gu</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="">Chen Chen</a><sup>2ᐪ</sup>,
+            </span>
+            <span class="author-block">
+              <a target="_blank" href="">Jianwei Niu</a><sup>1</sup>
+            </span>
+          </div>
+          <div class="is-size-5 affiliation">
+            <sup>1</sup>Beihang University,
+            <sup>2</sup>Hangzhou Innovation Institute Beihang University
+          </div>
+          <br>
+          <div class="affiliation-note">
+            <sup>*</sup> indicates equal contributions,
+            <sup>ᐪ</sup> Corresponding author
+          </div>
+          <div class="button-container">
+            <a href="./paper.pdf" target="_blank" class="button"><i class="fa-light fa-file"></i>&emsp14;PDF</a>
+            <a href="" target="_blank" class="button"><i class="fa-light fa-film"></i>&emsp14;Video</a>
+            <a href="" target="_blank" class="button"><i class="fa-light fa-code"></i>&emsp14;Code</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+
+<div class="container is-max-widescreen">
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        In unfamiliar environments, object-oriented navigation poses a significant challenge for robotic systems, particularly in the context of zero-shot object navigation. Previous methods typecially attempted to extract cues with image detection or vision-language models directly, which were limited in the utilization of relationships between the cues and the target object. To address this limitation, we propose a novel zero-shot object navigation method called Multi-Dimensional-Weighted Frontier Maps (MDWFM). This approach adaptively analyzes the correlations among task cues, scene cues, and geometric cues, selecting the most promising frontier by dynamically weighting scores across different dimensions. This strategy mitigates the distraction caused by irrelevant visual cues in long-distance tasks, leading to more accurate target identification. Our method employs a lightweight visual model, avoiding the use of vision-language models (VLMs) or large language models (LLMs), yet achieves superior performance by providing a more nuanced understanding of scene information. We evaluate MDWFM in photo-realistic environments using the Habitat-Matterport 3D (HM3D) and Gibson datasets within the Habitat simulator. Our approach achieves state-of-the-art performance on both datasets, as measured by success weighted by path length (SPL) and success rate (SR) for the Object Goal Navigation task.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<hr class="rounded">
+<div class="rows">
+  <h2 class="title is-3">Overview of MDWFM</h2>
+  <img src="media/figs/framework.jpg" class="method-image" />
+  <p class="content has-text-justified">
+    Multi-Dimensional-Weighted Frontier Maps (MDWFM) adaptively analyzes the correlations among task cues, scene cues, and geometric cues, selecting the most promising frontier by dynamically weighting scores across different dimensions. In initialize stage, the robot agent would spin inplace, and collect environment info. In exploration stage, the agent would evaluate each frontier using adptive weigthts for multi-dimension.</b>
+  </p>
+</div>
+<hr class="rounded">
+
+
+<div class="rows">
+  <h2 class="title is-3">Simulation examples</h2>
+  <p class="content has-text-justified">
+    Select a task to see its video and solution visualization.
+  </p>
+    <div class="columns">
+      <div class="column has-text-centered">
+        <div class="select is-rounded">     
+          <select id="sim-video-menu" onchange="updateSim()">
+          <option value="mdwfm-bed-0" selected="selected">bed</option>
+          <option value="mdwfm-toilet-0">toilet</option>
+          <option value="mdwfm-tv-1">tv</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column has-text-centered">
+        <p style="text-align:center;">
+          <video id="sim-video" width="100%" height="100%" controls autoplay loop muted>
+            <source src="media/videos/mdwfm-bed-0.mp4" type="video/mp4">
+          </video>
+        </p>
+      </div>
+    </div>
+</div>
+<hr class="rounded">
+
+<div class="rows">
+  <h2 class="title is-3">Compare with previous SOTA(VLFM)</h2>
+    <p class="content has-text-justified">
+      Select a task to see its video and solution visualization.
+    </p>
+    <div class="columns">
+      <div class="column has-text-centered">
+        <div class="select is-rounded">     
+          <select id="compare-video-menu" onchange="updateCompare()">
+          <option value="couch-0">couch-0</option>
+          <option value="couch-1">couch-1</option>
+          <option value="chair-0">chair</option>
+          <option value="tv-0">tv</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column has-text-centered">
+        <p style="text-align:center;">
+          <video id="compare-video1" width="100%" height="100%" controls autoplay loop muted>
+            <source src="media/videos/vlfm-couch-0.mp4" type="video/mp4">
+          </video>
+        </p>
+      </div>
+
+      <div class="column has-text-centered">
+        <p style="text-align:center;">
+          <video id="compare-video2" width="100%" height="100%" controls autoplay loop muted>
+            <source src="media/videos/mdwfm-couch-0.mp4" type="video/mp4">
+          </video>
+        </p>
+      </div>
+    </div>
+</div>
+<hr class="rounded">
+
+
+<h2 class="title is-3">Acknowledgments</h2>
+<p>
+  This work was supported by the National Key R&D Program of China(2023YFB4503701). The views and conclusions are those of the authors and should not be interpreted as representing the Government, or any sponsor.
+</p>
+<hr class="rounded">
+<h2 class="title is-3">BibTeX</h2>
+
+
+<p class="bibtex">
+
+</p>
+
+</section>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <p>
+            Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>,
+            <a href="https://dex-cap.github.io">DexCap</a>,
+            and <a href="https://transic-robot.github.io">TRANSIC</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
